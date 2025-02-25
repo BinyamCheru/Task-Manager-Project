@@ -18,10 +18,7 @@ const SingleTask = ({ task, description, isComplete }) => {
           </button>
         </div>
       </div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
-        tempor incidunt ut labore et dolore magna aliqua.
-      </p>
+      <p>{description}</p>
     </article>
   );
 };

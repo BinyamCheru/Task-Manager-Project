@@ -12,9 +12,17 @@ function App() {
     setIsOpenModal(!isOpenModal);
   };
 
+  const addTask = (task) => {
+    const newTask = [...tasks, task];
+    setTasks(newTask);
+  };
   return (
     <main>
-      <Modal isOpenModal={isOpenModal} toggleModal={toggleModal} />
+      <Modal
+        isOpenModal={isOpenModal}
+        toggleModal={toggleModal}
+        addTask={addTask}
+      />
       <Navbar toggleModal={toggleModal} />
       <TaskList tasks={tasks} />
     </main>
