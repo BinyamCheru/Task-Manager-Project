@@ -5,12 +5,18 @@ import Search from "./components/Search";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [tasks, setTasks] = useState([]);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpenModal(!isOpenModal);
+  };
 
   return (
     <main>
-      <Navbar />
-      <TaskList />
+      <Modal isOpenModal={isOpenModal} toggleModal={toggleModal} />
+      <Navbar toggleModal={toggleModal} />
+      <TaskList tasks={tasks} />
     </main>
   );
 }

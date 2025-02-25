@@ -1,12 +1,12 @@
 import Form from "./Form";
 import { FaTimes } from "react-icons/fa";
 
-const Modal = () => {
+const Modal = ({ isOpenModal, toggleModal }) => {
   return (
-    <div className="modal-overlay show-modal">
+    <div className={isOpenModal ? "modal-overlay show-modal" : "modal-overlay"}>
       <div className="modal-container">
         <Form />
-        <button className="close-modal-btn">
+        <button onClick={toggleModal} className="close-modal-btn">
           <FaTimes />
         </button>
       </div>
