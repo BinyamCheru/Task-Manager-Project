@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 
 const SingleTask = ({ task, description, isComplete }) => {
   return (
-    <article className="m-4 p-4 bg-[#CAD9F6] rounded-xl max-w-sm">
+    <article className="m-4 p-4 bg-[#CAD9F6] rounded-xl max-w-[300px]">
       <div className="flex justify-between mb-2 bg-purple-500 p-2 rounded-sm">
         <div className="flex space-x-4 bg-">
           <input type="checkbox" />

@@ -26,7 +26,7 @@ const tasks = [
 
 const TaskList = () => {
   return (
-    <section>
+    <section className="grid items-center md:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
       {tasks.map((task) => {
         return <SingleTask key={task.id} {...task} />;
       })}
