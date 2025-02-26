@@ -34,16 +34,32 @@ function App() {
     });
     console.log(editedTask);
 
-    const [{id: taskId, task, description, dueDate }] = editedTask;
+    const [{ id: taskId, task, description, dueDate }] = editedTask;
     console.log(task, description, dueDate);
 
-    deleteTask(taskId)
+    deleteTask(taskId);
     setTaskTitle(task);
     setTaskDueDate(dueDate);
     setTaskDescription(description);
     setIsOpenModal(true);
   };
 
+  const taskComplete = (id) => {
+    console.log(id);
+    const updatedTaskArray = tasks.map((task) => {
+      if (task.id === id) {
+        if (task.isComplete === false) {
+          task.isComplete = true;
+        } else {
+          task.isComplete = false;
+        }
+        return task;
+      }
+      return task;
+    });
+
+    setTasks(updatedTaskArray);
+  };
   return (
     <main>
       <Modal
@@ -59,7 +75,12 @@ function App() {
         setTaskDescription={setTaskDescription}
       />
       <Navbar toggleModal={toggleModal} />
-      <TaskList tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
+      <TaskList
+        tasks={tasks}
+        deleteTask={deleteTask}
+        editTask={editTask}
+        taskComplete={taskComplete}
+      />
     </main>
   );
 }

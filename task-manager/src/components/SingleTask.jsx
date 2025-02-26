@@ -8,12 +8,23 @@ const SingleTask = ({
   isComplete,
   deleteTask,
   editTask,
+  taskComplete,
 }) => {
   return (
-    <article className="m-4 p-4 bg-[#CAD9F6] rounded-xl max-w-[300px]">
+    <article
+      className={
+        isComplete
+          ? "m-4 p-4 bg-green-400 rounded-xl max-w-[300px]"
+          : "m-4 p-4 bg-[#CAD9F6] rounded-xl max-w-[300px]"
+      }
+    >
       <div className="flex justify-between mb-2 bg-purple-500 p-2 rounded-sm">
         <div className="flex space-x-4 bg-">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            value={isComplete}
+            onChange={() => taskComplete(id)}
+          />
           <p>{task} </p>
         </div>
         <div className="flex space-x-4">
