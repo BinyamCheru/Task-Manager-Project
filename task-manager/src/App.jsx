@@ -1,8 +1,45 @@
 import { useState } from "react";
 import Modal from "./components/Modal";
 import TaskList from "./components/TaskList";
-import Search from "./components/Search";
 import Navbar from "./components/Navbar";
+
+const demoTasks = [
+  {
+    id: "1a2b3c",
+    task: "Complete project report",
+    description: "Finish and submit the quarterly project report.",
+    dueDate: "2025-03-01",
+    isComplete: false,
+  },
+  {
+    id: "4d5e6f",
+    task: "Prepare presentation",
+    description: "Create slides for the upcoming team meeting.",
+    dueDate: "2025-03-05",
+    isComplete: false,
+  },
+  {
+    id: "7g8h9i",
+    task: "Buy groceries",
+    description: "Get milk, eggs, bread, and vegetables.",
+    dueDate: "2025-02-28",
+    isComplete: false,
+  },
+  {
+    id: "0j1k2l",
+    task: "Schedule doctor appointment",
+    description: "Book an appointment with Dr. Smith for a check-up.",
+    dueDate: "2025-03-10",
+    isComplete: false,
+  },
+  {
+    id: "3m4n5o",
+    task: "Pay electricity bill",
+    description: "Pay the monthly electricity bill online.",
+    dueDate: "2025-02-27",
+    isComplete: false,
+  },
+];
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -61,7 +98,7 @@ function App() {
     setTasks(updatedTaskArray);
   };
   return (
-    <main>
+    <main className="bg-[#F1F5F8] min-h-screen">
       <Modal
         isOpenModal={isOpenModal}
         toggleModal={toggleModal}

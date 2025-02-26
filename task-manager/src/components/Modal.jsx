@@ -15,7 +15,7 @@ const Modal = ({
 }) => {
   return (
     <div className={isOpenModal ? "modal-overlay show-modal" : "modal-overlay"}>
-      <div className="modal-container">
+      <div className="modal-container ">
         <Form
           addTask={addTask}
           editTask={editTask}
@@ -25,6 +25,7 @@ const Modal = ({
           setTaskTitle={setTaskTitle}
           setTaskDueDate={setTaskDueDate}
           setTaskDescription={setTaskDescription}
+          toggleModal={toggleModal}
         />
         <button onClick={toggleModal} className="close-modal-btn">
           <FaTimes />

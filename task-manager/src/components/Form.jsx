@@ -10,6 +10,7 @@ const Form = ({
   setTaskTitle,
   setTaskDueDate,
   setTaskDescription,
+  toggleModal,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const Form = ({
       isComplete: false,
     };
     addTask(newTask);
+    toggleModal();
     setTaskTitle("");
     setTaskDueDate("");
     setTaskDescription("");
@@ -31,12 +33,12 @@ const Form = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col space-y-4 p-6 my-8 w-3/4 bg-amber-100 rounded-md"
+      className="flex flex-col space-y-4 p-6 my-8 w-3/4 rounded-md"
     >
       {/* Task Input */}
       <input
         type="text"
-        className="p-2 rounded-md bg-amber-50"
+        className="w-full p-2 border border-gray-300 rounded-md placeholder:font-sans placeholder:font-light"
         placeholder="Task"
         value={taskTitle}
         onChange={(e) => setTaskTitle(e.target.value)}
@@ -44,7 +46,7 @@ const Form = ({
       {/* Due date Input */}
       <input
         type="date"
-        className="p-2 rounded-md bg-amber-50"
+        className="w-full p-2 border border-gray-300 rounded-md placeholder:font-sans placeholder:font-light"
         placeholder="Due date"
         value={taskDueDate}
         onChange={(e) => setTaskDueDate(e.target.value)}
@@ -52,8 +54,8 @@ const Form = ({
       {/* Description of task Input */}
       <textarea
         name="description"
-        className="p-2 rounded-md bg-amber-50"
-        rows={8}
+        className="w-full p-2 border border-gray-300 rounded-md placeholder:font-sans placeholder:font-light"
+        rows={5}
         placeholder="Description ..."
         value={taskDescription}
         onChange={(e) => setTaskDescription(e.target.value)}

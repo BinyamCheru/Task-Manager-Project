@@ -14,12 +14,12 @@ const SingleTask = ({
     <article
       className={
         isComplete
-          ? "m-4 p-4 bg-green-400 rounded-xl max-w-[300px]"
-          : "m-4 p-4 bg-[#CAD9F6] rounded-xl max-w-[300px]"
+          ? "m-4 p-4 bg-green-400 rounded-xl max-w-[300px] shadow-xl"
+          : "m-4 p-4 bg-purple-300 rounded-xl max-w-[300px] shadow-xl"
       }
     >
-      <div className="flex justify-between mb-2 bg-purple-500 p-2 rounded-sm">
-        <div className="flex space-x-4 bg-">
+      <div className="flex justify-between mb-2 rounded-sm">
+        <div className="flex space-x-2 bg-">
           <input
             type="checkbox"
             value={isComplete}
@@ -27,12 +27,12 @@ const SingleTask = ({
           />
           <p>{task} </p>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex space-x-2">
           <button onClick={() => editTask(id)}>
-            <FiEdit2 style={{ fontSize: "1.2rem", color: "white" }} />
+            <FiEdit2 style={{ fontSize: "1rem", color: "purple" }} />
           </button>
           <button onClick={() => deleteTask(id)}>
-            <MdDelete style={{ fontSize: "1.2rem", color: "white" }} />
+            <MdDelete style={{ fontSize: "1.2rem", color: "purple" }} />
           </button>
         </div>
       </div>
