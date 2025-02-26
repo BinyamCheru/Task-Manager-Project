@@ -2,15 +2,19 @@ import { useState } from "react";
 import Button from "./Button";
 import { nanoid } from "nanoid";
 
-const Form = ({ addTask }) => {
-  const [taskTitle, setTaskTitle] = useState("");
-  const [taskDueDate, setTaskDueDate] = useState("");
-  const [taskDescription, setTaskDescription] = useState("");
-
+const Form = ({
+  addTask,
+  taskTitle,
+  taskDueDate,
+  taskDescription,
+  setTaskTitle,
+  setTaskDueDate,
+  setTaskDescription,
+}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(taskTitle, taskDueDate, taskDescription);
-    if (!taskDescription || !taskTitle || taskDueDate) return;
+    console.log(taskTitle, taskDueDate, taskDescription);
+    if (!taskDescription || !taskTitle || !taskDueDate) return;
     const newTask = {
       id: nanoid(),
       task: taskTitle,

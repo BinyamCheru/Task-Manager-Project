@@ -1,7 +1,14 @@
 import { FiEdit2 } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 
-const SingleTask = ({ task, description, isComplete }) => {
+const SingleTask = ({
+  id,
+  task,
+  description,
+  isComplete,
+  deleteTask,
+  editTask,
+}) => {
   return (
     <article className="m-4 p-4 bg-[#CAD9F6] rounded-xl max-w-[300px]">
       <div className="flex justify-between mb-2 bg-purple-500 p-2 rounded-sm">
@@ -10,10 +17,10 @@ const SingleTask = ({ task, description, isComplete }) => {
           <p>{task} </p>
         </div>
         <div className="flex space-x-4">
-          <button>
+          <button onClick={() => editTask(id)}>
             <FiEdit2 style={{ fontSize: "1.2rem", color: "white" }} />
           </button>
-          <button>
+          <button onClick={() => deleteTask(id)}>
             <MdDelete style={{ fontSize: "1.2rem", color: "white" }} />
           </button>
         </div>
