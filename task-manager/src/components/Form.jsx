@@ -19,6 +19,7 @@ const Form = ({
       id: nanoid(),
       task: taskTitle,
       description: taskDescription,
+      dueDate: taskDueDate,
       isComplete: false,
     };
     addTask(newTask);

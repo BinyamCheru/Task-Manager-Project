@@ -32,8 +32,16 @@ function App() {
         return task;
       }
     });
+    console.log(editedTask);
 
-    setTasks(newTasks);
+    const [{id: taskId, task, description, dueDate }] = editedTask;
+    console.log(task, description, dueDate);
+
+    deleteTask(taskId)
+    setTaskTitle(task);
+    setTaskDueDate(dueDate);
+    setTaskDescription(description);
+    setIsOpenModal(true);
   };
 
   return (
